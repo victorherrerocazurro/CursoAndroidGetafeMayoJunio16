@@ -10,6 +10,10 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView txtSaludo;
 
+    public MainActivity(){
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,14 +21,20 @@ public class MainActivity extends AppCompatActivity {
 
         txtSaludo = (TextView) findViewById(R.id.txtSaludo);
 
-        TextView button = (TextView) findViewById(R.id.button);
+        View button = findViewById(R.id.button);
 
-        button.setOnClickListener(new View.OnClickListener() {
+
+        button.setOnClickListener(new FuncionalidadBoton(txtSaludo));
+
+        View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 txtSaludo.setText(R.string.otroSaludo);
             }
-        });
+        };
+
+
+        button.setOnClickListener(onClickListener);
 
 
 
