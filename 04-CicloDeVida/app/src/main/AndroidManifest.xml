@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.profesormanana.a03_comunicacionentreactividades">
+    package="com.example.profesormanana.a04_ciclodevida">
 
     <application
         android:allowBackup="true"
@@ -15,15 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SegundaActivity" >
-            <intent-filter>
-                <action android:name="com.example.profesormanana.a03_comunicacionentreactividades.ABRIR_TERCERA_ACTIVITY"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".TerceraActivity">
-
-        </activity>
+        <activity
+            android:name=".DialogoActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity android:name=".SegundaActivity"></activity>
     </application>
 
 </manifest>
