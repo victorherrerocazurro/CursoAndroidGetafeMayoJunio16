@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class PizzaAdapter extends BaseAdapter {
 
+    //Coleccion de Pizzas ordenada como se vaya a representar
     private List<Pizza> pizzas;
 
     public PizzaAdapter(List<Pizza> pizzas) {
@@ -41,11 +42,18 @@ public class PizzaAdapter extends BaseAdapter {
 
         if(convertView == null){
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.pizza_list_item,parent,false);
+
+            convertView.setTag(new PizzaViewHolder((TextView)convertView.findViewById(R.id.tvTitulo),(TextView)convertView.findViewById(R.id.tvIngredientes)));
         }
 
-        ((TextView)convertView.findViewById(R.id.tvTitulo)).setText(pizza.getNombre());
-        ((TextView)convertView.findViewById(R.id.tvIngredientes)).setText(pizza.getIngredientes().toString());
+        ((PizzaViewHolder)convertView.getTag()).getTvTitulo().setText(pizza.getNombre());
+        ((PizzaViewHolder)convertView.getTag()).getTvIngradientes().setText(pizza.getIngredientes().toString());
 
         return convertView;
+    }
+
+    //Esta implementacion del borrado, se basa en la coleccion ya ordenada
+    public void removeItem(int position){
+        pizzas.remove(position);
     }
 }

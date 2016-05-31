@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.io.Serializable;
@@ -40,7 +43,36 @@ public class MainActivity extends AppCompatActivity {
         adapter = new PizzaAdapter(pizzas);
 
         //Inicilizar el ListView
-        ((ListView)findViewById(R.id.lvPizzas)).setAdapter(adapter);
+        ListView listView = (ListView) findViewById(R.id.lvPizzas);
+
+        listView.setAdapter(adapter);
+
+        //Ya no queremos esta funcionalidad asociada al click sobre el item, sino que lo queremos asociado
+        //al menu contextual
+        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Borrar el registro de la coleccion y actualizar el ListView
+
+                //Como coincide la posición en el List y la posición en el ListView, pordemos hacer
+                //Esta implementacion se basa en la coleccion externa al adapter, que puede estar
+                //ordenada de forma distinta a la que el adapter representa
+                //pizzas.remove(position);
+                //En realidad lo optimo es acudir al adaptador, ya que es el que conoce como se ordenan
+                //Object item = adapter.getItem(position);
+                //pizzas.remove(item);
+                //El caso anterior, nos borraria la primera de las ocurrencias
+                adapter.removeItem(position);
+                //Se podria pasar dentro del removeItem
+                adapter.notifyDataSetChanged();
+
+            }
+        });*/
+
+        //Registra MainActivity como el Listener de longClick sobre el componente visual listView
+        //reaalizando MainActivity siempre el mismo procesamiento para todos los componentes, que es
+        //mostrar el menuContexual asociado
+        registerForContextMenu(listView);
 
 
     }
@@ -64,5 +96,40 @@ public class MainActivity extends AppCompatActivity {
                 //Ha habido un porblema y la pizza no se añade
             }
         }
+    }
+
+    //Es el que implementa realmente el Listener de la creacion del menu contextual
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        //Inflar en menu de opciones
+        getMenuInflater().inflate(R.menu.context_menu_lvpizzas,menu);
+
+        int position = ((AdapterView.AdapterContextMenuInfo) menuInfo).position;
+
+        Pizza pizza = (Pizza) adapter.getItem(position);
+
+        menu.setHeaderTitle(pizza.getIngredientes().toString());
+
+
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
+        switch (item.getItemId()){
+            case R.id.menuItemPizzaBorrar:
+                adapter.removeItem(menuInfo.position);
+                adapter.notifyDataSetChanged();
+                break;
+            case R.id.menuItemPizzaEditar:
+                break;
+        }
+
+
+        return true;
     }
 }
