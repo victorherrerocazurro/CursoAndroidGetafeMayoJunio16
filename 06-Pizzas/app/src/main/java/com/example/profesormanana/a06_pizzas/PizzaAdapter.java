@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public class PizzaAdapter extends BaseAdapter {
     private List<Pizza> pizzas;
 
     public PizzaAdapter(List<Pizza> pizzas) {
-        this.pizzas = pizzas;
+        this.pizzas = new LinkedList<>(pizzas);
     }
 
     @Override
@@ -55,5 +56,13 @@ public class PizzaAdapter extends BaseAdapter {
     //Esta implementacion del borrado, se basa en la coleccion ya ordenada
     public void removeItem(int position){
         pizzas.remove(position);
+    }
+
+    public void add(Pizza pizza) {
+        pizzas.add(pizza);
+    }
+
+    public void add(int posicion, Pizza pizza) {
+        pizzas.add(posicion, pizza);
     }
 }

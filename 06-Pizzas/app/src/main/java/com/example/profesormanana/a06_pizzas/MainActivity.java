@@ -16,8 +16,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final int REQUEST_CODE_NUEVA_PIZZA_ACTIVITY = 1;
+    private static final int REQUEST_CODE_NUEVA_PIZZA_ACTIVITY = 1;
     public static final String PIZZA = "pizza";
+    private static final int REQUEST_CODE_EDITAR_PIZZA_ACTIVITY = 2;
+    public static final String POSICION = "posicion";
 
     private List<Pizza> pizzas;
     private PizzaAdapter adapter;
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 //Añadir la pizza al listado de pizzas
                 Pizza pizza = (Pizza) data.getSerializableExtra(PIZZA);
 
-                pizzas.add(pizza);
+                adapter.add(pizza);
 
                 //Le decimos al ListView que el origen de datos ha sido actualizado
 
@@ -95,6 +97,32 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 //Ha habido un porblema y la pizza no se añade
             }
+        } else if(requestCode == REQUEST_CODE_EDITAR_PIZZA_ACTIVITY){
+            if(resultCode == Activity.RESULT_OK){
+                Pizza pizza = (Pizza) data.getSerializableExtra(PIZZA);
+                int posicion = data.getIntExtra(POSICION,-1);
+
+                //Intercambio entre la pizza existente, que es la antigua version de la pizza y
+                //la nueva pizza
+                if (posicion != -1)
+                {
+                    //Primera opcion de la edicion
+                    adapter.removeItem(posicion);
+                    adapter.add(posicion, pizza);
+
+                    //Segunda opcion de edicion
+                    //Pizza pizzaOld = (Pizza) adapter.getItem(posicion);
+                    //pizzaOld.setNombre(pizza.getNombre());
+
+                    //pizzaOld.actualizar(pizza);
+
+                    adapter.notifyDataSetChanged();
+                }
+
+            } else {
+                //Ha habido un porblema y la pizza no se añade
+            }
+
         }
     }
 
@@ -112,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
 
         menu.setHeaderTitle(pizza.getIngredientes().toString());
 
-
     }
 
     @Override
@@ -126,6 +153,14 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
                 break;
             case R.id.menuItemPizzaEditar:
+                //Abrimos la actividad de Edicion de la Pizza
+                Intent intent = new Intent(MainActivity.this, NuevaPizzaActivity.class);
+
+                Pizza pizza = (Pizza) adapter.getItem(menuInfo.position);
+                intent.putExtra(PIZZA, pizza);
+                intent.putExtra(POSICION, menuInfo.position);
+
+                startActivityForResult(intent, REQUEST_CODE_EDITAR_PIZZA_ACTIVITY);
                 break;
         }
 

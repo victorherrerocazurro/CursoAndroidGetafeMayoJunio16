@@ -12,6 +12,8 @@ import java.util.List;
 
 public class NuevaPizzaActivity extends AppCompatActivity {
 
+    //private Intent intentRespuesta = new Intent();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,20 @@ public class NuevaPizzaActivity extends AppCompatActivity {
 
         spinner3.setAdapter(adapter);
 
+
+        Pizza pizza = (Pizza) getIntent().getSerializableExtra(MainActivity.PIZZA);
+        int posicion = getIntent().getIntExtra(MainActivity.POSICION, -1);
+
+        if(posicion != -1){
+            //Estamos en edicion
+            spinner1.setSelection(adapter.getPosition(pizza.getIngredientes().get(0)));
+            spinner2.setSelection(adapter.getPosition(pizza.getIngredientes().get(1)));
+            spinner3.setSelection(adapter.getPosition(pizza.getIngredientes().get(2)));
+            //TODO Falta el TextView del Nombre de la Pizza
+            //intentRespuesta.putExtra(MainActivity.POSICION, posicion);
+        }
+
+
         findViewById(R.id.btAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,11 +61,11 @@ public class NuevaPizzaActivity extends AppCompatActivity {
                         }), ""
                 );
 
-                Intent intent = new Intent();
+                //intentRespuesta.putExtra(MainActivity.PIZZA,pizza);
+                //setResult(RESULT_OK, intentRespuesta);
 
-                intent.putExtra(MainActivity.PIZZA,pizza);
-
-                setResult(RESULT_OK,intent);
+                getIntent().putExtra(MainActivity.PIZZA,pizza);
+                setResult(RESULT_OK, getIntent());
 
                 finish();
 
