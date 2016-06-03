@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <fragment
+        android:layout_width="645dp"
+        android:layout_height="match_parent"
+        android:name="com.example.profesormanana.a10_fragmentos.ListadoCorreosFragment"
+        android:id="@+id/fragmentListado"
+        android:layout_gravity="center_horizontal" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.example.profesormanana.a10_fragmentos.DetalleCorreoFragment"
+        android:id="@+id/fragmentDetalle" />
+</LinearLayout>

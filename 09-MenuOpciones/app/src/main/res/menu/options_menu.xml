@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_settings" android:icon="@android:drawable/ic_menu_preferences"
+        app:showAsAction="always" android:title="Configuracion"/>
+    <item android:id="@+id/action_help" android:title="Ayuda" app:showAsAction="never"/>
+    <item android:id="@+id/submenu" android:title="Submenu" app:showAsAction="never">
+        <menu>
+            <item android:id="@+id/opcion1" android:title="Opcion1"/>
+            <item android:id="@+id/opcion2" android:title="Opcion2"/>
+        </menu>
+    </item>
+</menu>
