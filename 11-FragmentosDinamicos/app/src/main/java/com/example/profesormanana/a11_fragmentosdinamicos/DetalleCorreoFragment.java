@@ -1,4 +1,4 @@
-package com.example.profesormanana.a10_fragmentos;
+package com.example.profesormanana.a11_fragmentosdinamicos;
 
 
 import android.os.Bundle;
@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import java.io.Serializable;
 
 
 /**
