@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pais">
+        <item>España</item>
+        <item>Canada</item>
+        <item>Australia</item>
+    </string-array>
+    <string-array name="pais_value">
+        <item>ESP</item>
+        <item>CAN</item>
+        <item>AUS</item>
+    </string-array>
+
+
+</resources>

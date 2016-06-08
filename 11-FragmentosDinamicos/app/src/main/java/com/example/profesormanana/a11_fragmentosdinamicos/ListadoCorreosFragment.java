@@ -35,7 +35,7 @@ public class ListadoCorreosFragment extends Fragment {
         return view;
     }
 
-    //Tenemos la garantia de que se gha ejecutado todo el metodo onCreate de la actividad, y por tanto se han definido las inicializaciones del objeto fragment
+    //Tenemos la garantia de que se ha ejecutado todo el metodo onCreate de la actividad, y por tanto se han definido las inicializaciones del objeto fragment
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

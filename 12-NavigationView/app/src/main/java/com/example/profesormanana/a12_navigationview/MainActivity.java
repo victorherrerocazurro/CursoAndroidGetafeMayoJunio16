@@ -3,6 +3,8 @@ package com.example.profesormanana.a12_navigationview;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,12 +17,25 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Fragment[] fragmentos = new Fragment[]{new IntroFragment(), new EnviadosFragment(),
+            new RecibidosFragment(), new PapeleraFragment(), new BorradorFragment()};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Inicializacion del hueco con un fragmento de bienvenida
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        transaction.add(R.id.el_hueco, fragmentos[0]);
+
+        transaction.commit();
+
+        //Fin Inicializacion del hueco
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -44,18 +59,20 @@ public class MainActivity extends AppCompatActivity {
                 // Handle navigation view item clicks here.
                 int id = item.getItemId();
 
-                if (id == R.id.nav_camera) {
-                    // Handle the camera action
-                } else if (id == R.id.nav_gallery) {
+                if (id == R.id.nav_enviados) {
 
-                } else if (id == R.id.nav_slideshow) {
+                    reemplazarFragmento(fragmentos[1]);
 
-                } else if (id == R.id.nav_manage) {
+                } else if (id == R.id.nav_recibidos) {
 
-                } else if (id == R.id.nav_share) {
+                    reemplazarFragmento(fragmentos[2]);
 
-                } else if (id == R.id.nav_send) {
+                } else if (id == R.id.nav_papelera) {
 
+                    reemplazarFragmento(fragmentos[3]);
+
+                } else if (id == R.id.nav_borrador) {
+                    reemplazarFragmento(fragmentos[4]);
                 }
 
                 DrawerLayout drawer = (DrawerLayout) MainActivity.this.findViewById(R.id.drawer_layout);
@@ -63,6 +80,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    private void reemplazarFragmento(Fragment fragmento){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.el_hueco, fragmento);
+
+        transaction.commit();
     }
 
     @Override
