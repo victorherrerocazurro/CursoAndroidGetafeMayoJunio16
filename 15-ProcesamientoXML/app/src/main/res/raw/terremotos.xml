@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:georss="http://www.georss.org/georss" xmlns="http://www.w3.org/2005/Atom">
+    <title>USGS Magnitude 4.5+ Earthquakes, Past Day</title>
+    <updated>2016-06-10T07:55:13Z</updated>
+    <author>
+        <name>U.S. Geological Survey</name>
+        <uri>http://earthquake.usgs.gov/</uri>
+    </author>
+    <id>http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.atom</id>
+    <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.atom" rel="self" />
+    <icon>http://earthquake.usgs.gov/favicon.ico</icon>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:200063dm</id>
+        <title>M 4.8 - 25km S of Somotillo, Nicaragua</title>
+        <updated>2016-06-10T04:52:09.874Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063dm" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us200063dm.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063dm#dyfi" class="mmi-III" title="Did You Feel It? maximum reported intensity (2 reports)">DYFI? - <strong class="roman">III</strong></a></p><dl><dt>Time</dt><dd>2016-06-10 04:33:02 UTC</dd><dd>2016-06-09 22:33:02 -06:00 at epicenter</dd><dt>Location</dt><dd>12.813&deg;N 86.905&deg;W</dd><dt>Depth</dt><dd>10.00 km (6.21 mi)</dd></dl>]]></summary>
+        <georss:point>12.8132 -86.9054</georss:point>
+        <georss:elev>-10000</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 4" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:200063dk</id>
+        <title>M 6.2 - 20km WNW of Auki, Solomon Islands</title>
+        <updated>2016-06-10T06:22:47.409Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063dk" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us200063dk.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063dk#pager" title="PAGER estimated impact alert level" class="pager-green">PAGER - <strong class="roman">GREEN</strong></a> <a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063dk#shakemap" title="ShakeMap maximum estimated intensity" class="mmi-V">ShakeMap - <strong class="roman">V</strong></a> <a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063dk#dyfi" class="mmi-III" title="Did You Feel It? maximum reported intensity (3 reports)">DYFI? - <strong class="roman">III</strong></a></p><dl><dt>Time</dt><dd>2016-06-10 04:17:44 UTC</dd><dd>2016-06-10 15:17:44 +11:00 at epicenter</dd><dt>Location</dt><dd>8.686&deg;S 160.536&deg;E</dd><dt>Depth</dt><dd>28.45 km (17.68 mi)</dd></dl>]]></summary>
+        <georss:point>-8.6857 160.5359</georss:point>
+        <georss:elev>-28450</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 6" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:200063db</id>
+        <title>M 4.6 - 19km SSW of Somotillo, Nicaragua</title>
+        <updated>2016-06-10T04:17:56.820Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063db" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us200063db.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063db#dyfi" class="mmi-I" title="Did You Feel It? maximum reported intensity (0 reports)">DYFI? - <strong class="roman">I</strong></a></p><dl><dt>Time</dt><dd>2016-06-10 03:45:11 UTC</dd><dd>2016-06-09 21:45:11 -06:00 at epicenter</dd><dt>Location</dt><dd>12.874&deg;N 86.948&deg;W</dd><dt>Depth</dt><dd>10.00 km (6.21 mi)</dd></dl>]]></summary>
+        <georss:point>12.8735 -86.9476</georss:point>
+        <georss:elev>-10000</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 4" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:200063d6</id>
+        <title>M 4.8 - 23km E of Puerto Morazan, Nicaragua</title>
+        <updated>2016-06-10T04:40:35.417Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063d6" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us200063d6.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063d6#dyfi" class="mmi-IV" title="Did You Feel It? maximum reported intensity (2 reports)">DYFI? - <strong class="roman">IV</strong></a></p><dl><dt>Time</dt><dd>2016-06-10 03:39:31 UTC</dd><dd>2016-06-09 21:39:31 -06:00 at epicenter</dd><dt>Location</dt><dd>12.828&deg;N 86.954&deg;W</dd><dt>Depth</dt><dd>10.00 km (6.21 mi)</dd></dl>]]></summary>
+        <georss:point>12.8276 -86.9542</georss:point>
+        <georss:elev>-10000</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 4" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:200063d2</id>
+        <title>M 5.1 - 24km S of Somotillo, Nicaragua</title>
+        <updated>2016-06-10T04:40:19.246Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063d2" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us200063d2.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063d2#dyfi" class="mmi-II" title="Did You Feel It? maximum reported intensity (1 reports)">DYFI? - <strong class="roman">II</strong></a></p><dl><dt>Time</dt><dd>2016-06-10 03:28:06 UTC</dd><dd>2016-06-09 21:28:06 -06:00 at epicenter</dd><dt>Location</dt><dd>12.826&deg;N 86.903&deg;W</dd><dt>Depth</dt><dd>10.00 km (6.21 mi)</dd></dl>]]></summary>
+        <georss:point>12.826 -86.9033</georss:point>
+        <georss:elev>-10000</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 5" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:200063cy</id>
+        <title>M 6.1 - 17km E of Puerto Morazan, Nicaragua</title>
+        <updated>2016-06-10T05:32:16.098Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063cy" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us200063cy.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063cy#pager" title="PAGER estimated impact alert level" class="pager-yellow">PAGER - <strong class="roman">YELLOW</strong></a> <a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063cy#shakemap" title="ShakeMap maximum estimated intensity" class="mmi-VIII">ShakeMap - <strong class="roman">VIII</strong></a> <a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063cy#dyfi" class="mmi-VII" title="Did You Feel It? maximum reported intensity (120 reports)">DYFI? - <strong class="roman">VII</strong></a></p><dl><dt>Time</dt><dd>2016-06-10 03:25:22 UTC</dd><dd>2016-06-09 21:25:22 -06:00 at epicenter</dd><dt>Location</dt><dd>12.841&deg;N 87.013&deg;W</dd><dt>Depth</dt><dd>10.00 km (6.21 mi)</dd></dl>]]></summary>
+        <georss:point>12.841 -87.0131</georss:point>
+        <georss:elev>-10000</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 6" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:200063ce</id>
+        <title>M 4.7 - 251km NNE of Chichi-shima, Japan</title>
+        <updated>2016-06-10T01:54:00.725Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063ce" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us200063ce.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063ce#dyfi" class="mmi-I" title="Did You Feel It? maximum reported intensity (0 reports)">DYFI? - <strong class="roman">I</strong></a></p><dl><dt>Time</dt><dd>2016-06-10 01:36:13 UTC</dd><dd>2016-06-10 11:36:13 +10:00 at epicenter</dd><dt>Location</dt><dd>29.296&deg;N 142.779&deg;E</dd><dt>Depth</dt><dd>10.00 km (6.21 mi)</dd></dl>]]></summary>
+        <georss:point>29.2958 142.7793</georss:point>
+        <georss:elev>-10000</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 4" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:200063bl</id>
+        <title>M 5.0 - 181km NNE of Fais, Micronesia</title>
+        <updated>2016-06-10T01:00:05.938Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063bl" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us200063bl.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us200063bl#dyfi" class="mmi-I" title="Did You Feel It? maximum reported intensity (0 reports)">DYFI? - <strong class="roman">I</strong></a></p><dl><dt>Time</dt><dd>2016-06-10 00:45:51 UTC</dd><dd>2016-06-10 09:45:51 +09:00 at epicenter</dd><dt>Location</dt><dd>11.368&deg;N 140.881&deg;E</dd><dt>Depth</dt><dd>35.00 km (21.75 mi)</dd></dl>]]></summary>
+        <georss:point>11.3681 140.8807</georss:point>
+        <georss:elev>-35000</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 5" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:2000638t</id>
+        <title>M 4.6 - 201km NW of Saumlaki, Indonesia</title>
+        <updated>2016-06-09T20:19:44.879Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us2000638t" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us2000638t.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us2000638t#dyfi" class="mmi-I" title="Did You Feel It? maximum reported intensity (0 reports)">DYFI? - <strong class="roman">I</strong></a></p><dl><dt>Time</dt><dd>2016-06-09 19:57:46 UTC</dd><dd>2016-06-10 04:57:46 +09:00 at epicenter</dd><dt>Location</dt><dd>6.485&deg;S 130.229&deg;E</dd><dt>Depth</dt><dd>138.55 km (86.09 mi)</dd></dl>]]></summary>
+        <georss:point>-6.4847 130.2286</georss:point>
+        <georss:elev>-138550</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 4" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:2000638s</id>
+        <title>M 5.2 - 10km W of Uddiawan, Philippines</title>
+        <updated>2016-06-09T20:33:34.681Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us2000638s" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us2000638s.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us2000638s#dyfi" class="mmi-V" title="Did You Feel It? maximum reported intensity (8 reports)">DYFI? - <strong class="roman">V</strong></a></p><dl><dt>Time</dt><dd>2016-06-09 19:54:39 UTC</dd><dd>2016-06-10 03:54:39 +08:00 at epicenter</dd><dt>Location</dt><dd>16.544&deg;N 121.053&deg;E</dd><dt>Depth</dt><dd>45.17 km (28.07 mi)</dd></dl>]]></summary>
+        <georss:point>16.5443 121.0531</georss:point>
+        <georss:elev>-45170</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 5" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+    <entry>
+        <id>urn:earthquake-usgs-gov:us:2000633z</id>
+        <title>M 4.9 - 218km ENE of Neiafu, Tonga</title>
+        <updated>2016-06-09T14:03:15.403Z</updated>
+        <link href="http://earthquake.usgs.gov/earthquakes/eventpage/us2000633z" rel="alternate"
+            type="text/html" />
+        <link href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us2000633z.cap" rel="alternate"
+            type="application/cap+xml" />
+        <summary type="html">
+            <![CDATA[<p class="quicksummary"><a href="http://earthquake.usgs.gov/earthquakes/eventpage/us2000633z#dyfi" class="mmi-I" title="Did You Feel It? maximum reported intensity (0 reports)">DYFI? - <strong class="roman">I</strong></a></p><dl><dt>Time</dt><dd>2016-06-09 13:37:39 UTC</dd><dd>2016-06-09 02:37:39 -11:00 at epicenter</dd><dt>Location</dt><dd>17.912&deg;S 172.062&deg;W</dd><dt>Depth</dt><dd>40.91 km (25.42 mi)</dd></dl>]]></summary>
+        <georss:point>-17.9118 -172.0624</georss:point>
+        <georss:elev>-40910</georss:elev>
+        <category label="Age" term="Past Day" />
+        <category label="Magnitude" term="Magnitude 4" />
+        <category label="Contributor" term="us" />
+        <category label="Author" term="us" />
+    </entry>
+</feed>

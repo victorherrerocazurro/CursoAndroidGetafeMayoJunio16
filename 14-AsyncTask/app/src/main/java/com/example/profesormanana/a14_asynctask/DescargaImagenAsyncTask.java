@@ -46,9 +46,9 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
 
             InputStream is = connection.getInputStream();
 
-            byte[] resultado = new byte[imageSize];
+            /*byte[] resultado = neentryentryeee3eeeeeeeeennw byte[imageSize];
 
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[1024]; eerfrdsdsd          sdsdsd
 
             int byteTotalesLeidos = 0;
 
@@ -63,7 +63,9 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
                 publishProgress(byteTotalesLeidos*100/imageSize);//Debe ser con juicio
             }
 
-            return BitmapFactory.decodeByteArray(resultado, 0, imageSize);
+            return BitmapFactory.decodeByteArray(resultado, 0, imageSize);*/
+
+            return  BitmapFactory.decodeStream(is);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
