@@ -7,9 +7,6 @@ import android.preference.PreferenceFragment;
  * Created by profesormanana on 8/6/16.
  */
 public class MisPreferenciasFragment extends PreferenceFragment {
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

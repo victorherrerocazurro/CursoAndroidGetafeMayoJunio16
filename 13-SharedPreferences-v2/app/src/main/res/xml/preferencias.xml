@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:key="@string/key_nombre"
+        android:dialogTitle="Escriba su nombre"
+        android:summary="Esta propieda permite definir el nombre"
+        android:title="Nombre" />
+    <ListPreference android:key="@string/key_colores"
+        android:dialogTitle="seleccione su color favorito"
+        android:summary="Esta propieda permite definir el color favorito"
+        android:title="Color Favorito"
+        android:entries="@array/entriesColores"
+        android:entryValues="@array/entriesValuesColoresRGB" />
+    <CheckBoxPreference android:key="check"
+        android:title="checkea"
+        android:summary="Esta propiedad es  true o false"
+        android:defaultValue="false"></CheckBoxPreference>
+    <RingtonePreference android:key="ring"
+        android:title="Ringtone"
+        android:summary="Esta propiedad es un politono"></RingtonePreference>
+    <SwitchPreference android:key="switch"
+        android:title="Switch"
+        android:summary="Esta propiedad es un switch"
+        android:defaultValue="false"></SwitchPreference>
+    <Preference android:key="preferencia sin tipo"
+        android:title="Sin tipo"></Preference>
+    <PreferenceScreen android:title="Mas">
+        <CheckBoxPreference android:key="otroCheck"
+            android:title="OtroCheck"></CheckBoxPreference>
+    </PreferenceScreen>
+
+</PreferenceScreen>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">13-SharedPreferences</string>
+
+    <string name="key_nombre">nombre</string>
+    <string name="key_prefijo">prefijo</string>
+    <string name="key_sufijo">sufijo</string>
+    <string name="key_colores">colores</string>
+    <string name="hello_world">Hola mundo</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="entriesColores">
+        <item>rojo</item>
+        <item>verde</item>
+        <item>azul</item>
+    </string-array>
+    <string-array name="entriesValuesColoresRGB">
+        <item>F00</item>
+        <item>0F0</item>
+        <item>00F</item>
+    </string-array>
+
+</resources>
