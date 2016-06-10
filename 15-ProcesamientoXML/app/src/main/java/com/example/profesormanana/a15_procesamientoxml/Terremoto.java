@@ -16,17 +16,19 @@ public class Terremoto implements Serializable{
     private List<String> links = new LinkedList<>();
     private double latitud;
     private double longitud;
+    private String descripcion;
 
     public Terremoto() {
     }
 
-    public Terremoto(String id, String titulo, Date fecha, List<String> links, double latitud, double longitud) {
+    public Terremoto(String id, String titulo, Date fecha, List<String> links, double latitud, double longitud, String descripcion) {
         this.id = id;
         this.titulo = titulo;
         this.fecha = fecha;
         this.links = links;
         this.latitud = latitud;
         this.longitud = longitud;
+        this.descripcion = descripcion;
     }
 
     public String getId() {
@@ -75,6 +77,14 @@ public class Terremoto implements Serializable{
 
     public void setLongitud(double longitud) {
         this.longitud = longitud;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.profesormanana.a15_procesamientoxml;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
+import org.xml.sax.ext.DefaultHandler2;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.text.ParseException;
@@ -41,12 +42,12 @@ public class TerremotosSaxHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         super.startElement(uri, localName, qName, attributes);
 
-        if (localName.equals("entry")){
+        if (qName.equals("entry")){
             terremoto = new Terremoto();
         }
 
         if (terremoto != null){
-            if(localName.equals("link")){
+            if(qName.equals("link")){
                 terremoto.addLink(attributes.getValue("href"));
             }
         }
@@ -64,28 +65,30 @@ public class TerremotosSaxHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         super.endElement(uri, localName, qName);
-        if(localName.equals("entry")){
+        if(qName.equals("entry")){
             resultado.add(terremoto);
             terremoto = null;
         }
 
         if (terremoto != null){
-            if(localName.equals("id")){
+            if(qName.equals("id")){
                 //Que a traves de character se habra acumulado el valor entre las etiquetas de inicio y fin de id
                 terremoto.setId(acumulador.toString());
-            } else if(localName.equals("title")){
+            } else if(qName.equals("title")){
                 terremoto.setTitulo(acumulador.toString());
-            } else if (localName.equals("updated")){
+            } else if (qName.equals("updated")){
                 try {
                     terremoto.setFecha(sdf.parse(acumulador.toString()));
                 } catch (ParseException e) {
                     e.printStackTrace();
                     terremoto.setFecha(null);
                 }
-            } else if(localName.equals("georss:point")){
+            } else if(qName.equals("georss:point")){
                 String[] latLon = acumulador.toString().split(" ");
                 terremoto.setLatitud(Double.valueOf(latLon[0]));
                 terremoto.setLongitud(Double.valueOf(latLon[1]));
+            } else if (qName.equals("summary")){
+                terremoto.setDescripcion(acumulador.toString().trim());
             }
         }
     }
@@ -94,6 +97,4 @@ public class TerremotosSaxHandler extends DefaultHandler {
     public void endDocument() throws SAXException {
         super.endDocument();
     }
-
-
 }
