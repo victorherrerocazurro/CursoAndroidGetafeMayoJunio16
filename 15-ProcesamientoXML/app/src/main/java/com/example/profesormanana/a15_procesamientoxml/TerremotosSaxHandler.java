@@ -89,6 +89,10 @@ public class TerremotosSaxHandler extends DefaultHandler {
                 terremoto.setLongitud(Double.valueOf(latLon[1]));
             } else if (qName.equals("summary")){
                 terremoto.setDescripcion(acumulador.toString().trim());
+
+                //Si deseamos interrumpir en un momento el parse del XML
+                //throw new SAXException();
+
             }
         }
     }
