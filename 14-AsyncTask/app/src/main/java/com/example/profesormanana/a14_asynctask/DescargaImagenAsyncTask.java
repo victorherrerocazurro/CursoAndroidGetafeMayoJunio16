@@ -1,5 +1,6 @@
 package com.example.profesormanana.a14_asynctask;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,13 +21,15 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
 
     private final ImageView imageView;
     private final Context contexto;
+    private final ProgressDialog progressDialog;
 
     //Contructor que proporcione la referencia a los elementos visuales que se necesitan para
     //procesar el resultado y el progreso
 
-    public DescargaImagenAsyncTask(ImageView imageView, Context contexto) {
+    public DescargaImagenAsyncTask(ImageView imageView, Context contexto, ProgressDialog progressDialog) {
         this.imageView = imageView;
         this.contexto = contexto;
+        this.progressDialog = progressDialog;
     }
 
     //O metodos de set de los elementos visuales
@@ -46,9 +49,9 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
 
             InputStream is = connection.getInputStream();
 
-            /*byte[] resultado = neentryentryeee3eeeeeeeeennw byte[imageSize];
+            byte[] resultado = new byte[imageSize];
 
-            byte[] buffer = new byte[1024]; eerfrdsdsd          sdsdsd
+            byte[] buffer = new byte[1024];
 
             int byteTotalesLeidos = 0;
 
@@ -63,9 +66,9 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
                 publishProgress(byteTotalesLeidos*100/imageSize);//Debe ser con juicio
             }
 
-            return BitmapFactory.decodeByteArray(resultado, 0, imageSize);*/
+            return BitmapFactory.decodeByteArray(resultado, 0, imageSize);
 
-            return  BitmapFactory.decodeStream(is);
+            //return  BitmapFactory.decodeStream(is);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -84,6 +87,13 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+        progressDialog.setMax(100);
+
+        progressDialog.setProgress(0);
+
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+
+        progressDialog.show();
     }
 
     //Actualizar la UI con el resultado de la operacion de larga duracion
@@ -95,12 +105,14 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
         } else {
             Toast.makeText(contexto, "Ha habido un error en la descarga", Toast.LENGTH_SHORT).show();
         }
+        progressDialog.hide();
     }
 
     @Override
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
-        Toast.makeText(contexto, "Se lleva de prograso: " + values[0], Toast.LENGTH_SHORT).show();
+        //Toast.makeText(contexto, "Se lleva de prograso: " + values[0], Toast.LENGTH_SHORT).show();
+        progressDialog.setProgress(values[0]);
     }
 
     @Override
