@@ -40,6 +40,8 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
 
         //Mi tarea de larga duracion
 
+        InputStream is = null;
+
         try {
             URL url = new URL(params[0]);
 
@@ -47,7 +49,7 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
 
             int imageSize = connection.getContentLength();
 
-            InputStream is = connection.getInputStream();
+            is = connection.getInputStream();
 
             byte[] resultado = new byte[imageSize];
 
@@ -75,6 +77,14 @@ public class DescargaImagenAsyncTask extends AsyncTask<String, Integer, Bitmap> 
             //Aqui no se puede lanzar un Toast, o mostrar una notificacion
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if(is != null) {
+                    is.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         return null;

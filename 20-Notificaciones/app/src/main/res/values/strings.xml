@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">20-Notificaciones</string>
+    <string name="titulo_notificacion">Titulo de la notificacion</string>
+</resources>
