@@ -15,7 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <provider
+            android:authorities="com.example.profesormanana.a22_content_provider"
+            android:name="PeliculasSQLiteContentProvider"
+            android:exported="true"/>
     </application>
 
 </manifest>

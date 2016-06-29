@@ -42,9 +42,14 @@ public class PeliculasSQLiteContentProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         switch (matcher.match(uri)){
-            case CODE_PELICULAS:
-                return db.query(false,PeliculasSQLiteDAO.TABLE_PELICULAS,projection,PeliculasSQLiteDAO.PELICULAS_ID+" = ?",new String[]{uri.getLastPathSegment()},null,null,sortOrder,null);
             case CODE_PELICULA:
+                return db.query(
+                        false,
+                        PeliculasSQLiteDAO.TABLE_PELICULAS,
+                        projection,
+                        PeliculasSQLiteDAO.PELICULAS_ID+" = ?",
+                        new String[]{uri.getLastPathSegment()},null,null,sortOrder,null);
+            case CODE_PELICULAS:
                 return db.query(false,PeliculasSQLiteDAO.TABLE_PELICULAS,projection,selection,selectionArgs,null,null,sortOrder,null);
             default:
                 throw new UnsupportedOperationException("Operación no soportada");
