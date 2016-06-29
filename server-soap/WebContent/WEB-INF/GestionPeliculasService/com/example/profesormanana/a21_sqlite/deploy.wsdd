@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from GestionPeliculasService WSDL service -->
+
+  <service name="GestionPeliculas" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://a21_sqlite.profesormanana.example.com"/>
+      <parameter name="wsdlServiceElement" value="GestionPeliculasService"/>
+      <parameter name="schemaQualified" value="http://a21_sqlite.profesormanana.example.com"/>
+      <parameter name="wsdlServicePort" value="GestionPeliculas"/>
+      <parameter name="className" value="com.example.profesormanana.a21_sqlite.GestionPeliculas"/>
+      <parameter name="wsdlPortType" value="GestionPeliculas"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://a21_sqlite.profesormanana.example.com" name="update" qname="operNS:update" soapAction="">
+        <parameter xmlns:pns="http://a21_sqlite.profesormanana.example.com" xmlns:tns="http://a21_sqlite.profesormanana.example.com" qname="pns:pelicula" type="tns:Pelicula"/>
+      </operation>
+      <operation xmlns:operNS="http://a21_sqlite.profesormanana.example.com" xmlns:retNS="http://a21_sqlite.profesormanana.example.com" xmlns:rtns="http://a21_sqlite.profesormanana.example.com" name="read" qname="operNS:read" returnQName="retNS:readReturn" returnType="rtns:Pelicula" soapAction="">
+        <parameter xmlns:pns="http://a21_sqlite.profesormanana.example.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://a21_sqlite.profesormanana.example.com" name="delete" qname="operNS:delete" soapAction="">
+        <parameter xmlns:pns="http://a21_sqlite.profesormanana.example.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://a21_sqlite.profesormanana.example.com" name="create" qname="operNS:create" soapAction="">
+        <parameter xmlns:pns="http://a21_sqlite.profesormanana.example.com" xmlns:tns="http://a21_sqlite.profesormanana.example.com" qname="pns:pelicula" type="tns:Pelicula"/>
+      </operation>
+      <operation xmlns:operNS="http://a21_sqlite.profesormanana.example.com" xmlns:retNS="http://a21_sqlite.profesormanana.example.com" xmlns:rtns="http://a21_sqlite.profesormanana.example.com" name="readAll" qname="operNS:readAll" returnQName="retNS:readAllReturn" returnType="rtns:Pelicula" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="read update create delete readAll"/>
+
+      <typeMapping xmlns:ns="http://a21_sqlite.profesormanana.example.com" qname="ns:Pelicula" type="java:com.example.profesormanana.a21_sqlite.Pelicula" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

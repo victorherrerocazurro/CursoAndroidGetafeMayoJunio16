@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://a21_sqlite.profesormanana.example.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://a21_sqlite.profesormanana.example.com" xmlns:intf="http://a21_sqlite.profesormanana.example.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://a21_sqlite.profesormanana.example.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="update">
+    <complexType>
+     <sequence>
+      <element name="pelicula" type="impl:Pelicula"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Pelicula">
+    <sequence>
+     <element name="director" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:int"/>
+     <element name="sinopsis" nillable="true" type="xsd:string"/>
+     <element name="titulo" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="updateResponse">
+    <complexType/>
+   </element>
+   <element name="read">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="readResponse">
+    <complexType>
+     <sequence>
+      <element name="readReturn" type="impl:Pelicula"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="delete">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteResponse">
+    <complexType/>
+   </element>
+   <element name="create">
+    <complexType>
+     <sequence>
+      <element name="pelicula" type="impl:Pelicula"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createResponse">
+    <complexType/>
+   </element>
+   <element name="readAll">
+    <complexType/>
+   </element>
+   <element name="readAllResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="readAllReturn" type="impl:Pelicula"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="readResponse">
+
+      <wsdl:part element="impl:readResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readAllRequest">
+
+      <wsdl:part element="impl:readAll" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readAllResponse">
+
+      <wsdl:part element="impl:readAllResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateRequest">
+
+      <wsdl:part element="impl:update" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readRequest">
+
+      <wsdl:part element="impl:read" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteResponse">
+
+      <wsdl:part element="impl:deleteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createRequest">
+
+      <wsdl:part element="impl:create" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createResponse">
+
+      <wsdl:part element="impl:createResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateResponse">
+
+      <wsdl:part element="impl:updateResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteRequest">
+
+      <wsdl:part element="impl:delete" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="GestionPeliculas">
+
+      <wsdl:operation name="update">
+
+         <wsdl:input message="impl:updateRequest" name="updateRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateResponse" name="updateResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="read">
+
+         <wsdl:input message="impl:readRequest" name="readRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:readResponse" name="readResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="delete">
+
+         <wsdl:input message="impl:deleteRequest" name="deleteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteResponse" name="deleteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="create">
+
+         <wsdl:input message="impl:createRequest" name="createRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createResponse" name="createResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readAll">
+
+         <wsdl:input message="impl:readAllRequest" name="readAllRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:readAllResponse" name="readAllResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="GestionPeliculasSoapBinding" type="impl:GestionPeliculas">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="update">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="read">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="readRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="readResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="delete">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="create">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readAll">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="readAllRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="readAllResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="GestionPeliculasService">
+
+      <wsdl:port binding="impl:GestionPeliculasSoapBinding" name="GestionPeliculas">
+
+         <wsdlsoap:address location="http://localhost:8080/PeliculasWS/services/GestionPeliculas"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
